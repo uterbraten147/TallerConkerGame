@@ -4,8 +4,23 @@ using UnityEngine;
 
 public class PlayerMove : MonoBehaviour
 {
+	public Animator animPlayer;
     
-    public float speed = 20;
+	public float Walkspeed = 10;
+	public float Runspeed = 15;
+	bool isRuning = false;
+	Vector3 MovePlayer;
+	
+	void Start()
+	{
+		//Set Cursor to not be visible
+		Cursor.visible = false;
+		isRuning = false;
+		MovePlayer = Vector3.zero;
+		
+		
+	}
+    
   
    
    private  void Update()
@@ -15,11 +30,32 @@ public class PlayerMove : MonoBehaviour
 
 
     void movement()
-    {
+	{
+    	
+    	
         float horizontal = Input.GetAxis("Horizontal");
-        float vertical = Input.GetAxis("Vertical");
-
-        Vector3 MovePlayer = new Vector3(horizontal, 0, vertical) * speed * Time.deltaTime;
-        transform.Translate(MovePlayer, Space.Self);
+		float vertical = Input.GetAxis("Vertical");
+        
+		if(Input.GetKey(KeyCode.LeftShift)){
+			
+			isRuning = true;
+			MovePlayer = new Vector3(horizontal, 0, vertical) * Runspeed * Time.deltaTime;
+			
+		}else{
+			
+			isRuning = false;
+			 MovePlayer = new Vector3(horizontal, 0, vertical) * Walkspeed * Time.deltaTime;
+			
+		}
+		
+		
+        
+		transform.Translate(MovePlayer, Space.Self);
+		
+		
+        
+		animPlayer.SetFloat("walk", vertical);
+		animPlayer.SetFloat("sideWalk", horizontal);
+		animPlayer.SetBool("runing",isRuning);
     }
 }
