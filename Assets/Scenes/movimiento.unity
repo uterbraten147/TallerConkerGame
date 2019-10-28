@@ -152,10 +152,10 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 1
+  m_Speed: 2
   m_Acceleration: 8
   avoidancePriority: 50
-  m_AngularSpeed: 200
+  m_AngularSpeed: 1000
   m_StoppingDistance: 3
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
@@ -249,7 +249,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 5
+  m_Radius: 8
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &192348596
 MonoBehaviour:
@@ -265,7 +265,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   agent: {fileID: 192348590}
   target: {fileID: 2146464875}
-  outTarget: 6
+  outTarget: 12
   balaPFB: {fileID: 6636071048634493973, guid: f3b4e9be7bd07ba4fa26b03b41c97832, type: 3}
   fireRate: 2
 --- !u!1 &702164904
@@ -910,7 +910,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2146464875}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.59, y: 0.21222994, z: -5.26}
+  m_LocalPosition: {x: -0.88, y: 0.21222994, z: 7.48}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -929,3 +929,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   life: 50
+  Velocidad: 5

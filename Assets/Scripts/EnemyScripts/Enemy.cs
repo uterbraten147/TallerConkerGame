@@ -33,6 +33,9 @@ public class Enemy : MonoBehaviour
                     lastTimeShoot = Time.time;
                     Instantiate(balaPFB,transform.position,transform.rotation);
                 }
+                Vector3 direccion =target.transform.position-transform.position;
+                Quaternion Rotacion = Quaternion.LookRotation(direccion);
+                transform.rotation = Quaternion.Slerp(transform.rotation, Rotacion, 8.0f * Time.deltaTime);
             }
             
         }
@@ -46,6 +49,11 @@ public class Enemy : MonoBehaviour
             positionPlayer = other.gameObject;
             followingPlayer = true;
         }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        
     }
 
 }
