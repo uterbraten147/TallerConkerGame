@@ -9,6 +9,7 @@ public class PlayerMove : MonoBehaviour
 	public float Walkspeed = 10;
 	public float Runspeed = 15;
 	bool isRuning = false;
+	bool apuntar = false;
 	Vector3 MovePlayer;
 	
 	void Start()
@@ -32,6 +33,14 @@ public class PlayerMove : MonoBehaviour
     void movement()
 	{
     	
+		if(Input.GetMouseButton(1))
+		{
+			apuntar=true;
+			
+		}else {
+			apuntar = false;
+		}
+			
     	
         float horizontal = Input.GetAxis("Horizontal");
 		float vertical = Input.GetAxis("Vertical");
@@ -57,5 +66,6 @@ public class PlayerMove : MonoBehaviour
 		animPlayer.SetFloat("walk", vertical);
 		animPlayer.SetFloat("sideWalk", horizontal);
 		animPlayer.SetBool("runing",isRuning);
+		animPlayer.SetBool("apuntando", apuntar);
     }
 }
