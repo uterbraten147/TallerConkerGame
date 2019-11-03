@@ -9,8 +9,7 @@ public class rayViewer : MonoBehaviour
   
     void Start()
 	{
-		cam= GetComponent<Camera>();
-        
+		cam= GameObject.Find("Target").transform.GetChild(0).GetComponent<Camera>();
     }
 
 

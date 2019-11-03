@@ -19,7 +19,7 @@ public class RaycastShoot : MonoBehaviour
     void Start()
 	{
 		laserLine = GetComponent<LineRenderer>();
-		Cam = GetComponent<Camera>();
+		Cam = GameObject.Find("Target").transform.GetChild(0).GetComponent<Camera>();
         
     }
 
