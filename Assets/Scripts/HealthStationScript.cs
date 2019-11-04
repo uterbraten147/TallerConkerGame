@@ -18,9 +18,9 @@ public class HealthStationScript : MonoBehaviour
 		if(curarVida && PlayerStats.VidaPlayer  < 100)
 		{
 			PlayerStats.VidaPlayer += Time.deltaTime;
-			Debug.Log("Se esta curando");
+			//	Debug.Log("Se esta curando");
 		}else{
-			Debug.Log("ya se curo haha");
+			//	Debug.Log("ya se curo haha");
 		}
         
     }

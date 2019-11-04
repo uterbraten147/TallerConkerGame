@@ -9,7 +9,7 @@ public class PlayerMove : MonoBehaviour
 	public float Walkspeed = 10;
 	public float Runspeed = 15;
 	bool isRuning = false;
-	bool apuntar = false;
+	public static bool apuntar = false;
 	Vector3 MovePlayer;
 	
 	void Start()

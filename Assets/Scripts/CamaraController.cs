@@ -8,11 +8,28 @@ public class CamaraController : MonoBehaviour
     public float RotationSpeed = 1;
     public Transform target, player;
     float mouseX, mouseY;
-    // Start is called before the first frame update
+	// Start is called before the first frame update
+	public float fieldView;
+    
     void Start()
-    {
+	{
+		fieldView = 60f;
         
-    }
+	}
+    
+	void Update(){
+		
+		if(PlayerMove.apuntar)
+		{
+			fieldView = 30f;
+		}else{
+			fieldView= 60f;
+		}
+		
+		Camera.main.fieldOfView = fieldView;
+		
+	}
+	
 
    void LateUpdate()
     {
